@@ -1,0 +1,18 @@
+<form (ngSubmit)="onSubmit()">
+
+  <input type="text" class="form-control" id="title"
+         required
+         [(ngModel)]="event.title" name="title">
+
+  <input type="time" class="form-control" id="time"
+         required
+         [(ngModel)]="event.time" name="time">
+  <div class="form-group">
+    <label for="type">Type d'activité</label>
+    <select class="form-control" id="type" required [(ngModel)]="event.type" name="type">
+      <option *ngFor="let type of types" [value]="type">{{type}}</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
