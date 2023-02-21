@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
   { path: 'events', component: CalendarComponent },
   { path: 'events/:id', component: EventDetailComponent },
-  { path: 'events/add', component: EventAddComponent },
+  { path: 'event/add', component: EventAddComponent },
 ];
 @NgModule({
   declarations: [],
