@@ -1,1 +1,11 @@
-<p>calendar works!</p>
+<button type="button" class="add-button" (click)="filterByType()">
+  Par Type
+</button>
+<button type="button" class="add-button" (click)="filterByTime()">
+  Par horaire
+</button>
+<div *ngFor="let event of events">
+  <h1>{{event.title}}</h1>
+  <span>{{event.time}}</span>
+  <span>{{event.type}}</span>
+</div>
