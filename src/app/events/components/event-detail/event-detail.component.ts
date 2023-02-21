@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Event} from "../../shared/event";
 import {EventsService} from "../../shared/events.service";
 
@@ -16,7 +16,8 @@ export class EventDetailComponent implements OnInit{
 
   constructor(
     private route: ActivatedRoute,
-    private eventService: EventsService
+    private eventService: EventsService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.getEvent();
@@ -33,7 +34,7 @@ export class EventDetailComponent implements OnInit{
       {
         next: (value: Event) => console.log(value),
         error: (error: string) => console.log(error),
-        complete: () => console.log("fini")
+        complete: () =>  this.router.navigate(['/'])
       }
     )
   }
