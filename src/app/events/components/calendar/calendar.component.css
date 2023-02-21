@@ -1,0 +1,8 @@
+mat-list {
+  width: fit-content;
+  margin:  auto;
+}
+ng-container {
+  display: flex;
+  flex-direction: row;
+}
