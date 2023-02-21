@@ -1,0 +1,7 @@
+form {
+  padding: 0.5rem;
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}

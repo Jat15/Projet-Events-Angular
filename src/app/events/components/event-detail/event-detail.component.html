@@ -1,0 +1,22 @@
+<main>
+  <h2>Modifier l'événement</h2>
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Titre</mat-label>
+    <input matInput [(ngModel)]="event.title"  name="title">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Horaire</mat-label>
+    <input matInput type="time" [(ngModel)]="event.time"  name="time">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Type d'activité</mat-label>
+    <mat-select required [(ngModel)]="event.type" name="type">
+      <mat-option *ngFor="let type of types" [value]="type">
+        {{type}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="accent">Modifier</button>
+</form>
+</main>

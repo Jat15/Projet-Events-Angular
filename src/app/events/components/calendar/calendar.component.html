@@ -1,0 +1,48 @@
+<main>
+  <h2>Calendrier</h2>
+  <div>
+  <button type="button" mat-raised-button (click)="triByType()">
+    Par Type
+  </button>
+  <button type="button" mat-raised-button (click)="triByTime()">
+    Par horaire
+  </button>
+    <mat-chip-listbox aria-label="Types activity filter" [(ngModel)]="typeSelect"  (ngModelChange)="filterbyType()" >
+      <mat-chip-option *ngFor="let type of types" [value]="type">{{type}}</mat-chip-option>
+    </mat-chip-listbox>
+    <form (ngSubmit)="filterbyType()">
+      <mat-form-field appearance="fill">
+        <mat-label>Min</mat-label>
+        <input matInput type="time" [(ngModel)]="min"  name="min">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Max</mat-label>
+        <input matInput type="time" [(ngModel)]="max"  name="max">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="accent">Filtre</button>
+    </form>
+  </div>
+  <mat-list>
+    <mat-list-item routerLink="/event/add">
+      <div matListItemIcon>
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <h3 matListItemTitle>Ajouter une carte</h3>
+    </mat-list-item>
+    <mat-list-item *ngFor="let event of eventsFiltre" routerLink="/events/{{event.id}}">
+      <div matListItemIcon>
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="deleteEvent(event)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <h3 matListItemTitle>{{event.title}}</h3>
+      <span matListItemLine>
+        <span>{{event.time}}</span>
+        <span> -- {{event.type}} <mat-icon>edit</mat-icon></span>
+
+      </span>
+    </mat-list-item>
+  </mat-list>
+</main>
