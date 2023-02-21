@@ -8,6 +8,18 @@ import { EventAddComponent } from './events/components/event-add/event-add.compo
 import {FormsModule} from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { EventDetailComponent } from './events/components/event-detail/event-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatCardModule} from "@angular/material/card";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatIconModule} from "@angular/material/icon";
+import {MatListModule} from "@angular/material/list";
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -20,7 +32,18 @@ import { EventDetailComponent } from './events/components/event-detail/event-det
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatIconModule,
+    MatListModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

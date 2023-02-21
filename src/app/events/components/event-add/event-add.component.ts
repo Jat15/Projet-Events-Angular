@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Event} from "../../shared/event";
 import {EventsService} from "../../shared/events.service";
+import {Router} from "@angular/router";
+import {TYPES} from "../../shared/mock-types";
 
 @Component({
   selector: 'app-event-add',
@@ -8,14 +10,15 @@ import {EventsService} from "../../shared/events.service";
   styleUrls: ['./event-add.component.css']
 })
 export class EventAddComponent {
-  types = ['Routine', 'Repas', 'Travail', 'Loisir'];
+  types = TYPES;
 
 
   model: Event = {} as Event;
 
 
   constructor(
-    private eventService: EventsService
+    private eventService: EventsService,
+    private router: Router
   ) {
   }
 
@@ -24,7 +27,7 @@ export class EventAddComponent {
       {
         next: (value: Event) => console.log(value),
         error: (error: string) => console.log(error),
-        complete: () => console.log("fini")
+        complete: () =>  this.router.navigate(['/'])
       }
     );
   }
