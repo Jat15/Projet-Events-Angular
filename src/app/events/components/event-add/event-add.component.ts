@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Event} from "../../shared/event";
 import {EventsService} from "../../shared/events.service";
 import {Router} from "@angular/router";
+import {TYPES} from "../../shared/mock-types";
 
 @Component({
   selector: 'app-event-add',
@@ -9,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./event-add.component.css']
 })
 export class EventAddComponent {
-  types = ['Routine', 'Repas', 'Travail', 'Loisir'];
+  types = TYPES;
 
 
   model: Event = {} as Event;

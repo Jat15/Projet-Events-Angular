@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Event} from "../../shared/event";
 import {EventsService} from "../../shared/events.service";
+import {TYPES} from "../../shared/mock-types";
 
 @Component({
   selector: 'app-event-detail',
@@ -12,7 +13,7 @@ import {EventsService} from "../../shared/events.service";
 export class EventDetailComponent implements OnInit{
 
   event!: Event;
-  types = ['Routine', 'Repas', 'Travail', 'Loisir'];
+  types = TYPES;
 
   constructor(
     private route: ActivatedRoute,
