@@ -22,6 +22,17 @@ export class CalendarComponent implements OnInit{
     this.eventsService.getAll().subscribe(events => this.events = events);
   }
 
+  deleteEvent(event: Event): void {
+    this.events = this.events.filter(e => e !== event);
+    this.eventsService.deleteEvent(event.id).subscribe(
+      {
+        next: (value: Event) => console.log(value),
+        error: (error: string) => console.log(error),
+        complete: () => console.log("fini")
+      }
+    );
+  }
+
   filterByType(): void {
     this.events.sort(
       function compareFn(a, b) {

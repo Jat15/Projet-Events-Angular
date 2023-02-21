@@ -8,4 +8,9 @@
   <h1>{{event.title}}</h1>
   <span>{{event.time}}</span>
   <span>{{event.type}}</span>
+
+  <button type="button" class="add-button" (click)="deleteEvent(event)">
+    Supprimer
+  </button>
+  <a routerLink="/events/{{event.id}}">Modifier</a>
 </div>
