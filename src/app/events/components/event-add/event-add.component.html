@@ -1,20 +1,23 @@
+<main>
+<h2>Ajouter l'événement</h2>
 <form (ngSubmit)="onSubmit()">
-
-  <input type="text" class="form-control" id="title"
-         required
-         [(ngModel)]="model.title" name="title">
-
-  <input type="time" class="form-control" id="time"
-         required
-         [(ngModel)]="model.time" name="time">
-  <div class="form-group">
-    <label for="type">Type d'activité</label>
-    <select class="form-control" id="type" required [(ngModel)]="model.type" name="type">
-      <option *ngFor="let type of types" [value]="type">{{type}}</option>
-    </select>
-</div>
-
-  <button type="submit" class="btn btn-success">Submit</button>
+  <mat-form-field appearance="fill">
+    <mat-label>Titre</mat-label>
+    <input matInput [(ngModel)]="model.title"  name="title">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Horaire</mat-label>
+    <input matInput type="time" [(ngModel)]="model.time"  name="time">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Type d'activité</mat-label>
+    <mat-select required [(ngModel)]="model.type" name="type">
+      <mat-option *ngFor="let type of types" [value]="type">
+        {{type}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="accent">Ajouter</button>
 </form>
-
+</main>
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Event} from "../../shared/event";
 import {EventsService} from "../../shared/events.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-event-add',
@@ -15,7 +16,8 @@ export class EventAddComponent {
 
 
   constructor(
-    private eventService: EventsService
+    private eventService: EventsService,
+    private router: Router
   ) {
   }
 
@@ -24,7 +26,7 @@ export class EventAddComponent {
       {
         next: (value: Event) => console.log(value),
         error: (error: string) => console.log(error),
-        complete: () => console.log("fini")
+        complete: () =>  this.router.navigate(['/'])
       }
     );
   }
